@@ -1,4 +1,4 @@
-name: MTK7981
+name: MTK7981-self-hosted
 on:
   workflow_dispatch:
   workflow_run:
