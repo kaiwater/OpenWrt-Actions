@@ -10,7 +10,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' $(find ./feeds/luci/collectio
 
 # 修改luci首页显示
 sed -i 's/ImmortalWrt/OpenWrt/gi' package/base-files/files/bin/config_generate
-sed -i 's/ImmortalWrt/OpenWrt/gi' include/version.mk
+sed -i '/downloads\.immortalwrt\.org/!s/ImmortalWrt/OpenWrt/gi' include/version.mk
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js
 cp -f $GITHUB_WORKSPACE/scripts/index.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js
 sed -i '/Target Platform/d' feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
